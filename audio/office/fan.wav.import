@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fan.wav-19efa618a17fcaa497295bf579ff3f42.sample"
+
+[deps]
+
+source_file="res://audio/office/fan.wav"
+dest_files=[ "res://.import/fan.wav-19efa618a17fcaa497295bf579ff3f42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

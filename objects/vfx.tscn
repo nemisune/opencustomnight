@@ -1,0 +1,371 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://objects/hud/6am.tres" type="DynamicFont" id=1]
+[ext_resource path="res://objects/vfx.gd" type="Script" id=2]
+[ext_resource path="res://sprites/hud/static/125.png" type="Texture" id=3]
+[ext_resource path="res://sprites/hud/static/129.png" type="Texture" id=4]
+[ext_resource path="res://sprites/hud/static/123.png" type="Texture" id=5]
+[ext_resource path="res://sprites/hud/static/126.png" type="Texture" id=6]
+[ext_resource path="res://sprites/hud/static/117.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("static:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("static:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/path = NodePath("static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("static:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("static:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("youdidit:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bg:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "play"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("youdidit:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 7.7, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bg:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 7.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("dark:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "playingDim"
+length = 3.56667
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("dark:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.4, 1.46667, 1.53333, 1.6, 1.66667, 1.73333, 1.8, 1.86667, 1.93333, 2, 2.06667, 2.13333, 2.2, 2.26667, 2.33333, 2.43333, 2.5, 2.56667, 2.63333, 2.7, 2.76667, 2.83333, 2.9, 2.96667, 3.03333, 3.1, 3.16667, 3.23333, 3.3, 3.36667, 3.43333, 3.5, 3.56667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0.717647 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.662745 ), Color( 1, 1, 1, 0.792157 ), Color( 1, 1, 1, 0.0352941 ), Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0.717647 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.662745 ), Color( 1, 1, 1, 0.792157 ), Color( 1, 1, 1, 0.0352941 ), Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.0313726 ), Color( 1, 1, 1, 0.0980392 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.435294 ), Color( 1, 1, 1, 0.0235294 ), Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0.717647 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.662745 ), Color( 1, 1, 1, 0.792157 ), Color( 1, 1, 1, 0.0352941 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("scramble/static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("scramble/static:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("scramble/static:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "scramble"
+tracks/0/type = "value"
+tracks/0/path = NodePath("scramble/static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("scramble/static:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "scrambleOff"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("scramble/static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("scramble/static:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("scramble/static:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="vfx" type="Node2D"]
+z_index = 99
+script = ExtResource( 2 )
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="fuzzy" type="Node2D" parent="canvas"]
+z_index = 1
+
+[node name="static" type="AnimatedSprite" parent="canvas/fuzzy"]
+visible = false
+position = Vector2( 512.5, 300.5 )
+scale = Vector2( 2.18958, 2.31481 )
+frames = SubResource( 3 )
+frame = 1
+
+[node name="staticAnimation" type="AnimationPlayer" parent="canvas/fuzzy"]
+anims/RESET = SubResource( 8 )
+anims/play = SubResource( 7 )
+
+[node name="6amScene" type="Node2D" parent="canvas"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="ColorRect" parent="canvas/6amScene"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1026.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="youdidit" type="RichTextLabel" parent="canvas/6amScene"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 85.0
+margin_top = 223.0
+margin_right = 958.0
+margin_bottom = 354.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "You Did It!"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="6amplayer" type="AnimationPlayer" parent="canvas/6amScene"]
+anims/RESET = SubResource( 1 )
+anims/play = SubResource( 2 )
+
+[node name="scramble" type="Node2D" parent="canvas"]
+
+[node name="static" type="AnimatedSprite" parent="canvas/scramble"]
+visible = false
+position = Vector2( 512.5, 300.5 )
+scale = Vector2( 2.18958, 2.31481 )
+frames = SubResource( 3 )
+frame = 4
+
+[node name="timer" type="Timer" parent="canvas/scramble"]
+wait_time = 4.0
+
+[node name="lightsdimming" type="Node2D" parent="canvas"]
+
+[node name="dark" type="ColorRect" parent="canvas/lightsdimming"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1031.0
+margin_bottom = 608.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="dimAnim" type="AnimationPlayer" parent="canvas/lightsdimming"]
+playback_speed = 1.5
+anims/RESET = SubResource( 9 )
+anims/playingDim = SubResource( 10 )
+
+[node name="animplayer" type="AnimationPlayer" parent="canvas"]
+anims/RESET = SubResource( 4 )
+anims/scramble = SubResource( 5 )
+anims/scrambleOff = SubResource( 6 )
+
+[connection signal="animation_finished" from="canvas/6amScene/6amplayer" to="." method="_on_6amplayer_animation_finished"]

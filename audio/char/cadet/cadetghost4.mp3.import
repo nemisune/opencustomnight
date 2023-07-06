@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cadetghost4.mp3-e4ea95aa73d0fb666155682d6f133115.mp3str"
+
+[deps]
+
+source_file="res://audio/char/cadet/cadetghost4.mp3"
+dest_files=[ "res://.import/cadetghost4.mp3-e4ea95aa73d0fb666155682d6f133115.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

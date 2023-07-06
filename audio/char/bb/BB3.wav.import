@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BB3.wav-da712e5d70c6fe40cbe8dac15244f710.sample"
+
+[deps]
+
+source_file="res://audio/char/bb/BB3.wav"
+dest_files=[ "res://.import/BB3.wav-da712e5d70c6fe40cbe8dac15244f710.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

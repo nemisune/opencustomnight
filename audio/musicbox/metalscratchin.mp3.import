@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/metalscratchin.mp3-1bb76725be44ef8e5b572ac516299e30.mp3str"
+
+[deps]
+
+source_file="res://audio/musicbox/metalscratchin.mp3"
+dest_files=[ "res://.import/metalscratchin.mp3-1bb76725be44ef8e5b572ac516299e30.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

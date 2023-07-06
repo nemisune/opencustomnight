@@ -1,0 +1,7 @@
+office sprite = 0
+behind desk animatronics = 1/2
+desk = 3
+infront of desk animatronics = 4
+
+cameras = 0
+animatronics on cam = 1

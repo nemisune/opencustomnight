@@ -1,0 +1,6 @@
+z index list
+
+animatronics behind doors = 1
+doors = 2
+animatronics above doors = 3
+cameras = 5
