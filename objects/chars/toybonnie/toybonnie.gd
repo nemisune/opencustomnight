@@ -11,9 +11,11 @@ var rng = RandomNumberGenerator.new()
 var phase = 0
 var exposure = 0
 var exposureRate = 1
+signal killHim
 
 func _ready():
-	pass
+	if get_parent().get_name() == "main": # Checking to make sure that there's a parent node, if there isn't a parent node it won't connect any signals or change position
+		connect("killHim", get_parent(), "jumpscareNow")
 
 func spawnChance():
 	rng.randomize()
@@ -48,5 +50,8 @@ func mouseLeavesHitbox():
 
 func deathTimer():
 	sprite.hide()
+	VFX.stopDimming()
+	Audio.stopToyStare()
 	if Global.jumpscareNow == "none":
 		Global.jumpscareNow = "tonnie"
+		emit_signal("killHim")

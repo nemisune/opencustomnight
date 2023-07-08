@@ -3,6 +3,7 @@ extends Node2D
 onready var timer = $chicaTimer
 onready var killTimer = $killTimer
 onready var noise = $potsnpans
+onready var warning = $canvas/uhoh
 var rng = RandomNumberGenerator.new()
 var checks = 0
 
@@ -25,12 +26,14 @@ func timerUpdate():
 		checksMet()
 
 func checksMet():
+	warning.play("on")
 	print("checks met")
 	noise.stop()
 	timer.stop()
 	killTimer.start()
 
 func crisisStopped():
+	warning.play("off")
 	if checks == 2:
 		checks = 0
 		killTimer.stop()
@@ -40,14 +43,7 @@ func crisisStopped():
 		if Global.jumpscare == "none":
 			Global.jumpscare = "chica"
 
-func killTimer():
-	if Global.cam == true:
-		rng.randomize()
-		var killChance = rng.randi_range(1,2)
-		if killChance == 1:
-				if Global.jumpscare == "none":
-					Global.jumpscare = "chica"
-		else:
-			timer.start()
-	else:
-		timer.start()
+
+func killCheck():
+	if Global.jumpscare == "none":
+		Global.jumpscare = "chica"

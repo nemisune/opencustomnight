@@ -2,6 +2,9 @@ extends Node2D
 
 onready var officePov = $pov
 onready var camPov = $campov
+onready var tweenShake = $pov/shakeTween
+onready var freq = $pov/freq
+onready var dur = $pov/duration
 onready var camMovement = $campov/camMover
 onready var ventPov = $ventpov
 onready var camHitbox = $campov/camHitbox/camHitshape
@@ -13,6 +16,10 @@ var powerCounter
 var animatronic
 var lastLoc = "lhall"
 signal camUp
+const TRANS = Tween.TRANS_SINE
+const EASE = Tween.EASE_IN_OUT
+var amplitude = 0
+
 
 func _ready():
 	overlay = preload("res://objects/hud/overlay.tscn").instance()
@@ -27,6 +34,11 @@ func _ready():
 	VFX.connect("SixAM", self, "goToMenu")
 	for animatronic in ["freddy", "chica", "foxy", "bb", "jj", "toybonnie", "toychica"]:
 		load_char(animatronic)
+
+func _input(event):
+	if Input.is_key_pressed(KEY_BACKSLASH):
+		print("cheater!")
+		when6AM()
 
 """ So basically what's going on up here is that it's preloading both the HUD and Candy Cadet animatronic so that they spawn in the office,
 it then also adds those two as children. Afterwards it uses plays an animation called "yeah" for the camMovement object that was defined
@@ -57,12 +69,40 @@ func unloadChar():
 	for threats in get_tree().get_nodes_in_group("animatronics"):
 		threats.queue_free()
 
+func startShake(duration = 2.5, frequency = 20, amplitude = 27):
+	print("going")
+	self.amplitude = amplitude
+	dur.wait_time = duration
+	freq.wait_time = 1/float(frequency)
+	dur.start()
+	freq.start()
+	createShake()
+
+func createShake():
+	var rand = Vector2()
+	rand.x = rand_range(-amplitude, amplitude)
+	rand.y = rand_range(-amplitude, amplitude)
+	tweenShake.interpolate_property(officePov, "offset", officePov.offset, rand, freq.wait_time, TRANS, EASE)
+	tweenShake.start()
+
+func reset():
+	tweenShake.interpolate_property(officePov, "offset", officePov.offset, Vector2(), freq.wait_time, TRANS, EASE)
+	tweenShake.start()
+
+func _on_freq_timeout():
+	createShake()
+
+func _on_duration_timeout():
+	reset()
+	freq.stop()
+
 func turnMonitorOn():
 	print("Working")
 	officePov.current = false
 	officePov.lock = true
 	camPov.current = true
 	camHitbox.disabled = false
+	Global.usage += 1
 	if has_node("bb"):
 		get_node("bb").littleShit()
 	if has_node("jj"):
@@ -73,10 +113,20 @@ func turnMonitorOff():
 	officePov.lock = false
 	officePov.current = true
 	camHitbox.disabled = true
+	Global.usage -= 1
 	if Global.jumpscare != "none":
 		officePov.lock = true
+		startShake()
 		overlay.jumpscare()
 		Audio.playScream()
+
+func jumpscareNow():
+	if Global.cam == true:
+		turnMonitorOff()
+	officePov.lock = true
+	startShake()
+	overlay.jumpscare()
+	Audio.playScream()
 
 func changeCam(camLoc):
 	camPov.position = get_node("cameras/"+str(camLoc)).position
@@ -109,8 +159,7 @@ func goToMenu():
 
 func when6AM():
 	VFX.play6AM()
-	Audio.DingDong()
 	Audio.stopBGM()
 	Audio.stopMusicBox()
 	officePov.lock = true
-	overlay.queue_free()
+

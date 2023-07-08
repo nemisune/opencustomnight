@@ -3,5 +3,5 @@ behind desk animatronics = 1/2
 desk = 3
 infront of desk animatronics = 4
 
-cameras = 0
+cameras = 6
 animatronics on cam = 1

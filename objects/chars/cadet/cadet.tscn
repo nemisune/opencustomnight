@@ -23,6 +23,7 @@ animations = [ {
 } ]
 
 [node name="cadet" type="Node2D"]
+z_index = 1
 script = ExtResource( 13 )
 
 [node name="background" type="Sprite" parent="."]

@@ -11,8 +11,10 @@ func _input(event):
 		$desk/click.play()
 		Global.fan = !Global.fan
 		if Global.fan == false:
+			Global.usage -= 1
 			$desk.playing = false
 			fade.play("off")
 		else:
+			Global.usage += 1
 			$desk.playing = true
 			fade.play("on")

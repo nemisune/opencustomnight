@@ -40,7 +40,7 @@ func _process(delta):
 		if is_instance_valid(camHitbox):
 			print("wow")
 			camHitbox.queue_free()
-	lookedAt = false
+			lookedAt = false
 	if Global.cam == true:
 		officeAnim.seek(phase)
 	if Global.cam == true && phase > 8:
@@ -51,10 +51,10 @@ func _process(delta):
 				Global.jumpscare = "foxy"
 
 func _on_detectCamera_area_entered(area):
-	if Global.cam == true:
-		progress = 0
-		numH = 0
-		lookedAt = true
+	progress = 0
+	numH = 0
+	lookedAt = true
 
 func _on_detectCamera_area_exited(area):
 	lookedAt = false
+	print("Not")

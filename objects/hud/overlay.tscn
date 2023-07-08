@@ -1,6 +1,7 @@
-[gd_scene load_steps=187 format=2]
+[gd_scene load_steps=198 format=2]
 
 [ext_resource path="res://sprites/monitor/118.png" type="Texture" id=1]
+[ext_resource path="res://font/minsans/MinSans-Regular.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://sprites/monitor/11f.png" type="Texture" id=3]
 [ext_resource path="res://sprites/monitor/124.png" type="Texture" id=4]
 [ext_resource path="res://sprites/monitor/122.png" type="Texture" id=5]
@@ -53,15 +54,15 @@
 [ext_resource path="res://sprites/char/chica/3cf.png" type="Texture" id=52]
 [ext_resource path="res://sprites/char/chica/3cc.png" type="Texture" id=53]
 [ext_resource path="res://sprites/char/chica/3cd.png" type="Texture" id=54]
-[ext_resource path="res://sprites/hud/mask/2d7.png" type="Texture" id=55]
-[ext_resource path="res://sprites/hud/mask/2da.png" type="Texture" id=56]
-[ext_resource path="res://sprites/hud/mask/2d5.png" type="Texture" id=57]
-[ext_resource path="res://sprites/hud/mask/2d9.png" type="Texture" id=58]
-[ext_resource path="res://sprites/hud/mask/2dd.png" type="Texture" id=59]
+[ext_resource path="res://sprites/hud/mask/140.png" type="Texture" id=55]
+[ext_resource path="res://sprites/hud/mask/137.png" type="Texture" id=56]
+[ext_resource path="res://sprites/hud/mask/138.png" type="Texture" id=57]
+[ext_resource path="res://sprites/hud/mask/135.png" type="Texture" id=58]
+[ext_resource path="res://sprites/hud/mask/136.png" type="Texture" id=59]
 [ext_resource path="res://sprites/hud/mpanel.png" type="Texture" id=60]
-[ext_resource path="res://sprites/hud/mask/2d4.png" type="Texture" id=61]
-[ext_resource path="res://sprites/hud/mask/2d6.png" type="Texture" id=62]
-[ext_resource path="res://sprites/hud/mask/2d8.png" type="Texture" id=63]
+[ext_resource path="res://sprites/hud/mask/139.png" type="Texture" id=61]
+[ext_resource path="res://sprites/hud/mask/126.png" type="Texture" id=62]
+[ext_resource path="res://sprites/hud/mask/144.png" type="Texture" id=63]
 [ext_resource path="res://sprites/char/toybonnie/3a3.png" type="Texture" id=64]
 [ext_resource path="res://sprites/char/toybonnie/3a4.png" type="Texture" id=65]
 [ext_resource path="res://sprites/char/toybonnie/3a6.png" type="Texture" id=66]
@@ -167,13 +168,18 @@
 [ext_resource path="res://sprites/hud/monitor/2e6.png" type="Texture" id=166]
 [ext_resource path="res://sprites/hud/monitor/11c.png" type="Texture" id=167]
 [ext_resource path="res://sprites/hud/monitor/11a.png" type="Texture" id=168]
-[ext_resource path="res://font/OCR A Std Regular.ttf" type="DynamicFontData" id=169]
+[ext_resource path="res://font/usagenoise.tres" type="Theme" id=169]
 [ext_resource path="res://objects/hud/timer.gd" type="Script" id=170]
 [ext_resource path="res://objects/hud/am.gd" type="Script" id=171]
 [ext_resource path="res://sprites/hud/monitor/11d.png" type="Texture" id=172]
 [ext_resource path="res://sprites/hud/monitor/11e.png" type="Texture" id=173]
 [ext_resource path="res://sprites/hud/monitor/11f.png" type="Texture" id=174]
 [ext_resource path="res://sprites/hud/monitor/118.png" type="Texture" id=175]
+[ext_resource path="res://font/minsans/MinSans-Bold.otf" type="DynamicFontData" id=176]
+[ext_resource path="res://objects/hud/usagebar.gd" type="Script" id=177]
+[ext_resource path="res://sprites/hud/mask/89.png" type="Texture" id=178]
+[ext_resource path="res://sprites/hud/mask/141.png" type="Texture" id=179]
+[ext_resource path="res://audio/deepbreaths.wav" type="AudioStream" id=180]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
@@ -283,23 +289,119 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=9]
-size = 34
-font_data = ExtResource( 169 )
-
-[sub_resource type="DynamicFontData" id=14]
-font_path = "res://font/OCR A Std Regular.ttf"
+size = 33
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=15]
-size = 30
-font_data = SubResource( 14 )
+size = 34
+font_data = ExtResource( 176 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+corner_detail = 1
+
+[sub_resource type="Theme" id=17]
+/styles/as = SubResource( 16 )
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 107, 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "working"
+length = 7.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 12 ), Vector2( 13, 12 ), Vector2( 26, 12 ), Vector2( 39, 12 ), Vector2( 52, 12 ), Vector2( 65, 12 ), Vector2( 78, 12 ), Vector2( 91, 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.988235, 0.94902, 1 ), Color( 1, 0.972549, 0.882353, 1 ), Color( 1, 0.933333, 0.729412, 1 ), Color( 1, 0.854902, 0.415686, 1 ), Color( 1, 0.643137, 0.184314, 1 ), Color( 1, 0, 0, 1 ) ]
+}
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 56 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 62 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 58 ), null ],
+"frames": [ null, ExtResource( 179 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 178 ), ExtResource( 62 ) ],
 "loop": false,
 "name": "on",
 "speed": 60.0
 } ]
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "breathing"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 18 ), Vector2( 0, -18 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -368,17 +470,19 @@ tracks/0/keys = {
 }
 
 [node name="overlay" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 13 )
 __meta__ = {
-"_edit_vertical_guides_": [ 1251.0 ],
+"_edit_vertical_guides_": [ 1251.0, 500.0 ],
 "_editor_description_": ""
 }
 
-[node name="perspective" type="Sprite" parent="."]
+[node name="effect" type="CanvasLayer" parent="."]
+
+[node name="perspective" type="Sprite" parent="effect"]
 material = SubResource( 5 )
 position = Vector2( 512, 300.944 )
 scale = Vector2( 16, 9.34548 )
-z_index = 2
 texture = ExtResource( 104 )
 __meta__ = {
 "_edit_lock_": true
@@ -475,15 +579,15 @@ theme = ExtResource( 15 )
 text = "CAM01"
 
 [node name="ventsys" type="Button" parent="camHUD"]
-margin_left = 150.0
+margin_left = 204.0
 margin_top = -91.0
-margin_right = 297.0
+margin_right = 298.0
 margin_bottom = -70.0
 theme = ExtResource( 103 )
 text = "VENT SYSTEM"
 
 [node name="camsys" type="Button" parent="camHUD"]
-margin_left = 150.0
+margin_left = 204.0
 margin_top = -68.0
 margin_right = 298.0
 margin_bottom = -47.0
@@ -491,10 +595,10 @@ theme = ExtResource( 103 )
 text = "CAM SYSTEM"
 
 [node name="changeMusic" type="Button" parent="camHUD"]
-margin_left = 150.0
-margin_top = -45.4501
+margin_left = 204.0
+margin_top = -45.0
 margin_right = 298.0
-margin_bottom = -24.4501
+margin_bottom = -24.0
 theme = ExtResource( 103 )
 text = "CHANGE MUSIC"
 
@@ -505,17 +609,17 @@ stream = ExtResource( 162 )
 z_index = 3
 
 [node name="mbutton" type="TextureButton" parent="panels"]
-margin_left = 207.0
-margin_top = 572.0
-margin_right = 517.0
+margin_left = 285.0
+margin_top = 581.0
+margin_right = 495.0
 margin_bottom = 600.0
 texture_normal = ExtResource( 60 )
 expand = true
 
 [node name="cbutton" type="TextureButton" parent="panels"]
-margin_left = 520.0
-margin_top = 572.0
-margin_right = 829.0
+margin_left = 505.0
+margin_top = 581.0
+margin_right = 715.0
 margin_bottom = 600.0
 texture_normal = ExtResource( 11 )
 expand = true
@@ -524,43 +628,84 @@ expand = true
 z_index = 3
 
 [node name="power" type="RichTextLabel" parent="hudElements"]
-margin_left = 15.0
-margin_top = 553.0
-margin_right = 131.0
-margin_bottom = 592.0
+margin_left = 17.0
+margin_top = 519.0
+margin_right = 170.0
+margin_bottom = 555.0
 custom_fonts/normal_font = SubResource( 9 )
 text = "100%"
+scroll_active = false
 
 [node name="timer" type="Label" parent="hudElements"]
-margin_left = 932.0
-margin_top = 34.0
-margin_right = 1118.0
-margin_bottom = 55.0
-text = "time"
+margin_left = 905.0
+margin_top = 33.0
+margin_right = 1091.0
+margin_bottom = 61.0
+theme = ExtResource( 169 )
+text = "00:00:000"
 script = ExtResource( 170 )
 
 [node name="am" type="RichTextLabel" parent="hudElements"]
-margin_left = 928.0
-margin_top = 6.0
-margin_right = 1045.0
-margin_bottom = 42.0
+margin_left = 911.0
+margin_right = 1028.0
+margin_bottom = 36.0
 custom_fonts/normal_font = SubResource( 15 )
 text = "12AM"
+scroll_active = false
 script = ExtResource( 171 )
 
 [node name="Timer" type="Timer" parent="hudElements/am"]
 wait_time = 45.0
 autostart = true
 
+[node name="usagebar" type="ColorRect" parent="hudElements"]
+margin_left = 20.0
+margin_top = 555.0
+margin_right = 127.0
+margin_bottom = 567.0
+theme = SubResource( 17 )
+color = Color( 1, 0, 0, 1 )
+script = ExtResource( 177 )
+
+[node name="usageanimation" type="AnimationPlayer" parent="hudElements/usagebar"]
+playback_speed = 0.0
+anims/RESET = SubResource( 18 )
+anims/working = SubResource( 19 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="hudElements"]
+margin_left = 20.0
+margin_top = 559.0
+margin_right = 94.0
+margin_bottom = 586.0
+theme = ExtResource( 169 )
+text = "usage"
+scroll_active = false
+
+[node name="version" type="RichTextLabel" parent="hudElements"]
+self_modulate = Color( 1, 1, 1, 0.309804 )
+margin_left = 934.0
+margin_top = 572.0
+margin_right = 1054.0
+margin_bottom = 612.0
+theme = ExtResource( 169 )
+text = "alpha 1.1"
+
 [node name="mask" type="AnimatedSprite" parent="."]
-position = Vector2( 512, 301 )
-scale = Vector2( 2.13333, 2.22963 )
+position = Vector2( 512, 302.334 )
+scale = Vector2( 1, 1.04514 )
+z_index = 3
 frames = SubResource( 3 )
 animation = "on"
-frame = 8
+
+[node name="breathing" type="AudioStreamPlayer" parent="mask"]
+stream = ExtResource( 180 )
+
+[node name="maskanimation" type="AnimationPlayer" parent="mask"]
+anims/RESET = SubResource( 20 )
+anims/breathing = SubResource( 21 )
 
 [node name="scaretimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.5
 
 [node name="camup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 160 )
@@ -597,4 +742,5 @@ anims/looking = SubResource( 13 )
 [connection signal="mouse_entered" from="panels/cbutton" to="." method="mouseEntered"]
 [connection signal="mouse_entered" from="panels/cbutton" to="camHUD" method="_on_cbutton_mouse_entered"]
 [connection signal="timeout" from="hudElements/am/Timer" to="hudElements/am" method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="mask" to="." method="_on_mask_animation_finished"]
 [connection signal="timeout" from="scaretimer" to="." method="_on_scaretimer_timeout"]

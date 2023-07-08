@@ -165,7 +165,7 @@ transitions = [ "RESET", "entering", SubResource( 8 ), "entering", "leaving", Su
 extents = Vector2( 197.75, 259 )
 
 [node name="toybonnie" type="Node2D"]
-z_index = 2
+z_index = 4
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]

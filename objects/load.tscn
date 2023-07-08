@@ -27,7 +27,7 @@ margin_bottom = 612.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="ToyChickenWideScreen" type="Sprite" parent="bg"]
-position = Vector2( 526.935, 297.625 )
+position = Vector2( -606, 29 )
 scale = Vector2( 0.262969, 0.262969 )
 texture = ExtResource( 6 )
 
@@ -35,7 +35,7 @@ texture = ExtResource( 6 )
 position = Vector2( 953, 519 )
 scale = Vector2( 0.512, 0.512 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

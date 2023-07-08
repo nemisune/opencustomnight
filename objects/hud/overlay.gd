@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 onready var tablet = $monitor
 onready var camHUD = $camHUD
 onready var camButtons = $camHUD/minimap
@@ -46,18 +45,43 @@ func mouseEntered():
 		camDownSound.play()
 		tablet.play("off")
 
-func jumpscare():
-	jumpscare.play(str(Global.jumpscare))
-	scareTimer.start()
+func _on_monitor_frame_changed():
+	var wow = tablet.get_animation()
+	if wow == "on":
+		if tablet.frame == 9:
+			Global.cam = true
+			emit_signal("monitorOn")
+			VFX.playStatic()
+			camHUD.show()
+	else:
+		if tablet.frame == 0:
+			camHUD.hide()
+			Global.cam = false
+			emit_signal("monitorOff")
 
 func _on_mbutton_mouse_entered():
-	mask.play("on", (!Global.mask))
+	mask.play("on", (Global.mask))
 	Global.mask = !Global.mask
 	camPanel.visible = !camPanel.visible
 	if Global.mask == true:
 		$maskon.play()
 	else:
+		$mask/maskanimation.play("RESET")
+		$mask/breathing.stop()
 		$maskoff.play()
+
+func _on_mask_animation_finished():
+	if Global.mask == true:
+		$mask/breathing.play()
+		$mask/maskanimation.play("breathing")
+
+func jumpscare():
+	if Global.jumpscare != "none":
+		jumpscare.play(str(Global.jumpscare))
+		scareTimer.start()
+	if Global.jumpscareNow != "none":
+		jumpscare.play(str(Global.jumpscareNow))
+		scareTimer.start()
 
 func _on_camsys_pressed():
 	camButtons.show()
@@ -79,16 +103,3 @@ func _on_changeMusic_pressed():
 	Audio.restartMusicBox()
 	emit_signal("musicSwapped")
 
-func _on_monitor_frame_changed():
-	var wow = tablet.get_animation()
-	if wow == "on":
-		if tablet.frame == 9:
-			Global.cam = true
-			emit_signal("monitorOn")
-			VFX.playStatic()
-			camHUD.show()
-	else:
-		if tablet.frame == 0:
-			camHUD.hide()
-			Global.cam = false
-			emit_signal("monitorOff")
