@@ -1,0 +1,50 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://sprites/char/nightfreddy/3e0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/char/nightfreddy/3d5.png" type="Texture" id=2]
+[ext_resource path="res://sprites/char/nightfreddy/3d2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/char/nightfreddy/3d3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/char/nightfreddy/3d4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/char/nightfreddy/3d8.png" type="Texture" id=6]
+[ext_resource path="res://sprites/char/nightfreddy/3d9.png" type="Texture" id=7]
+[ext_resource path="res://sprites/char/nightfreddy/3d6.png" type="Texture" id=8]
+[ext_resource path="res://sprites/char/nightfreddy/3da.png" type="Texture" id=9]
+[ext_resource path="res://sprites/char/nightfreddy/3d7.png" type="Texture" id=10]
+[ext_resource path="res://sprites/char/nightfreddy/3db.png" type="Texture" id=11]
+[ext_resource path="res://sprites/char/nightfreddy/3dc.png" type="Texture" id=12]
+[ext_resource path="res://sprites/char/nightfreddy/3dd.png" type="Texture" id=13]
+[ext_resource path="res://sprites/char/nightfreddy/3de.png" type="Texture" id=14]
+[ext_resource path="res://sprites/char/nightfreddy/3df.png" type="Texture" id=15]
+[ext_resource path="res://objects/chars/nightfreddy/freddle.gd" type="Script" id=16]
+[ext_resource path="res://audio/char/nightfreddy/Freddles.wav" type="AudioStream" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "1",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "2",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "3",
+"speed": 30.0
+} ]
+
+[node name="freddle" type="AnimatedSprite"]
+z_index = 2
+frames = SubResource( 1 )
+animation = "3"
+frame = 2
+playing = true
+script = ExtResource( 16 )
+
+[node name="freddle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -9.63
+autoplay = true

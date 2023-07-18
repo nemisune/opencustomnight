@@ -10,6 +10,7 @@ var phase = 0
 
 func _ready():
 	print("Little Shit loaded")
+	Overlay.connect("monitorOn", self, "littleShit") 
 
 func littleShit():
 	if Global.rventOcc == false && animation.current_animation != "office":

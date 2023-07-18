@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/fx/toyGlitching.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.266667 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "play"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.266667 ) ]
+}
+
+[node name="toyglitch" type="CanvasLayer"]
+layer = 5
+script = ExtResource( 1 )
+
+[node name="dark" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 605.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.266667 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark"]
+playback_speed = 3.0
+anims/RESET = SubResource( 1 )
+anims/play = SubResource( 2 )

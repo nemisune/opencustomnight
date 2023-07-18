@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://font/minsans/MinSans-Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://objects/menu/levelSetter.gd" type="Script" id=2]
+[ext_resource path="res://sprites/menu/css/47.png" type="Texture" id=3]
+[ext_resource path="res://audio/388480__bbrocer__metalic-zipper-hit.wav" type="AudioStream" id=4]
+[ext_resource path="res://sprites/menu/css/78.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=15]
+size = 47
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=16]
+default_font = SubResource( 15 )
+
+[node name="levelSetter" type="Node2D"]
+z_index = 10
+script = ExtResource( 2 )
+
+[node name="aiLevel" type="RichTextLabel" parent="."]
+margin_left = -42.0
+margin_top = 41.0
+margin_right = 22.0
+margin_bottom = 95.0
+mouse_filter = 2
+theme = SubResource( 16 )
+text = "0"
+scroll_active = false
+
+[node name="turnUp" type="TextureButton" parent="."]
+margin_left = -70.0
+margin_top = 56.0
+margin_right = -45.0
+margin_bottom = 74.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+expand = true
+
+[node name="turnDown" type="TextureButton" parent="."]
+margin_left = -70.0
+margin_top = 75.0
+margin_right = -45.0
+margin_bottom = 93.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+expand = true
+flip_v = true
+
+[node name="border" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="ting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="pressed" from="turnUp" to="." method="_on_turnUp_pressed"]
+[connection signal="pressed" from="turnDown" to="." method="_on_turnDown_pressed"]

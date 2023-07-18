@@ -8,12 +8,13 @@ var rng = RandomNumberGenerator.new()
 var checks = 0
 
 func _ready():
-	print("Chicken loaded")
-	noise.play()
 	if get_parent().get_name() == "main": # Checking to make sure that there's a parent node, if there isn't a parent node it won't connect any signals or change position
+		print("Chicken loaded")
 		var newPos = get_parent().get_node("cameras/kitchen").position # Getting the position that Chica needs to go to
-		position = newPos # Assigning said position
-
+		noise.position = newPos # Assigning said position
+		Overlay.connect("musicSwapped", self, "musicChanged")
+		noise.play()
+	
 func timerUpdate():
 	rng.randomize()
 	var chance = rng.randi_range(0,39)
@@ -32,7 +33,7 @@ func checksMet():
 	timer.stop()
 	killTimer.start()
 
-func crisisStopped():
+func musicChanged():
 	warning.play("off")
 	if checks == 2:
 		checks = 0
@@ -40,10 +41,12 @@ func crisisStopped():
 		timer.start()
 		noise.play()
 	else:
-		if Global.jumpscare == "none":
-			Global.jumpscare = "chica"
+		if Overlay.alive == true:
+			Overlay.alive = false
+			Overlay.jumpscareMoment("chica", 1)
 
 
 func killCheck():
-	if Global.jumpscare == "none":
-		Global.jumpscare = "chica"
+	if Overlay.alive == true:
+		Overlay.alive = false
+		Overlay.jumpscareMoment("chica", 1)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/chars/nightfreddy/nightfreddy.gd" type="Script" id=2]
+
+[node name="nightfreddy" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="fred1" type="Position2D" parent="."]
+position = Vector2( -128, 11 )
+
+[node name="fred2" type="Position2D" parent="."]
+position = Vector2( 122, 11 )
+
+[node name="fred3" type="Position2D" parent="."]
+position = Vector2( -455, 362 )
+
+[node name="fred4" type="Position2D" parent="."]
+position = Vector2( -596, 361 )
+
+[node name="fred5" type="Position2D" parent="."]
+position = Vector2( 570, 336 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="killTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="killTimer" to="." method="_on_killTimer_timeout"]

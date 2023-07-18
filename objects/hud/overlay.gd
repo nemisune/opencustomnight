@@ -1,18 +1,15 @@
 extends CanvasLayer
 
-onready var tablet = $monitor
 onready var camHUD = $camHUD
 onready var camButtons = $camHUD/minimap
-onready var jumpscare = $jumpscare
-onready var mask = $mask
+onready var jumpscareAnim = $jumpscare
 onready var powerText = $hudElements/power
-onready var camUpSound = $camup
-onready var camDownSound = $camdown
-onready var maskPanel = $panels/mbutton
-onready var camPanel = $panels/cbutton
 onready var scareTimer = $scaretimer
 var rng = RandomNumberGenerator.new()
 var on = false
+var moveon = false
+var alive = true
+var screamType
 signal monitorOn
 signal monitorOff
 signal go2Menu
@@ -20,68 +17,91 @@ signal sendLocation(camLoc)
 signal ventSys
 signal camSys
 signal musicSwapped
+signal itsOver
+signal camShake
+signal maskToggled
 
 func _ready():
-	if get_parent().get_name() == "main":
-		connect("monitorOn", get_parent(), "turnMonitorOn")
-		connect("monitorOff", get_parent(), "turnMonitorOff")
-		connect("sendLocation", get_parent(), "changeCam")
-		connect("ventSys", get_parent(), "ventToggle")
-		connect("camSys", get_parent(), "camToggle")
-		connect("musicSwapped", get_parent(), "musicChanged")
-		connect("go2Menu", get_parent(), "goToMenu")
+	pass
+
+func _input(event):
+	if event.is_action_pressed("ui_accept") && moveon == true:
+		endNight()
+
+func _on_gostatic_finished():
+	endNight()
+
+func startGame():
+	Overlay.show()
+	Global.power = 100
+	$hudElements/am.resetLol()
+	$hudElements/am/Timer.start()
+	$hudElements/timer.going = true
+	$monitormask/cpanel.show()
+	$monitormask/mpanel.show()
+	if Global.quality == 1:
+		$effect.show()
+	else:
+		$effect.hide()
+
+func when6AM():
+	$"6am/6amplayer".play("play")
+
+func endNight():
+	$"6am/6amplayer".play("RESET")
+	$gameover/gameover.play("RESET")
+	$jumpscare.play("none")
+	$hudElements/timer.going = false
+	$hudElements/timer.time = 0
+	$hudElements/am/Timer.stop()
+	Overlay.hide()
+	$effect.hide()
+	$gameover/gostatic.stop()
+	Global.povLock = false
+	emit_signal("go2Menu")
+	moveon = false
+	alive = true
+	RichPresence.update_activity()
 
 func _process(_delta):
-	powerText.text = str(round(Global.power))+"%"
-
-func mouseEntered():
-	maskPanel.visible = !maskPanel.visible
-	if Global.cam == false:
-		tablet.play("on")
-		camUpSound.play()
+	if Global.power > 0:
+		powerText.text = str(round(Global.power))+"%"
 	else:
-		VFX.clearCamFX()
-		camUpSound.stop()
-		camDownSound.play()
-		tablet.play("off")
+		powerText.text = "0%"
 
-func _on_monitor_frame_changed():
-	var wow = tablet.get_animation()
-	if wow == "on":
-		if tablet.frame == 9:
-			Global.cam = true
-			emit_signal("monitorOn")
-			VFX.playStatic()
-			camHUD.show()
-	else:
-		if tablet.frame == 0:
-			camHUD.hide()
-			Global.cam = false
-			emit_signal("monitorOff")
-
-func _on_mbutton_mouse_entered():
-	mask.play("on", (Global.mask))
-	Global.mask = !Global.mask
-	camPanel.visible = !camPanel.visible
+func jumpscareMoment(character, ver):
+	RichPresence.deadAsHell()
+	jumpscareAnim.play(character)
+	emit_signal("camShake")
+	Global.povLock = true
+	screamType = ver
+	get_node("scream/scream"+str(screamType)).play()
+	$monitormask/cpanel.hide()
+	$monitormask/mpanel.hide()
+	scareTimer.start()
 	if Global.mask == true:
-		$maskon.play()
-	else:
-		$mask/maskanimation.play("RESET")
-		$mask/breathing.stop()
-		$maskoff.play()
+		$monitormask.forceMaskOff()
+	if Global.cam == true:
+		$monitormask.forceCamOff()
 
-func _on_mask_animation_finished():
+func powerOff():
+	$monitormask/cpanel.hide()
+	$monitormask/mpanel.hide()
 	if Global.mask == true:
-		$mask/breathing.play()
-		$mask/maskanimation.play("breathing")
+		$monitormask.forceMaskOff()
+	if Global.cam == true:
+		$monitormask.forceCamOff()
 
-func jumpscare():
-	if Global.jumpscare != "none":
-		jumpscare.play(str(Global.jumpscare))
-		scareTimer.start()
-	if Global.jumpscareNow != "none":
-		jumpscare.play(str(Global.jumpscareNow))
-		scareTimer.start()
+func startStatic():
+	$camHUD/static.staticFade()
+
+func camOn():
+	camHUD.show()
+	emit_signal("monitorOn")
+
+func camOff():
+	camHUD.hide()
+	emit_signal("monitorOff")
 
 func _on_camsys_pressed():
 	camButtons.show()
@@ -92,14 +112,29 @@ func _on_ventsys_pressed():
 	emit_signal("ventSys")
 
 func _on_scaretimer_timeout():
-	emit_signal("go2Menu")
-	Audio.stopScream()
+	$gameover/gostatic.play()
+	emit_signal("itsOver")
+	get_node("scream/scream"+str(screamType)).stop()
+	$gameover/gameover.play("static")
+	$gameover.position = $hudElements.position
 
 func _on_camHUD_camChanged(camLoc):
 	emit_signal("sendLocation",camLoc)
-	VFX.playStatic()
+	if camLoc == "kitchen":
+		$camHUD/changeMusic.show()
+	else:
+		$camHUD/changeMusic.hide()
 
 func _on_changeMusic_pressed():
 	Audio.restartMusicBox()
 	emit_signal("musicSwapped")
 
+func _on_gameover_animation_finished(_anim_name):
+	moveon = true
+
+func _on_6amplayer_animation_finished(anim_name):
+	if anim_name == "play":
+		endNight()
+
+func _on_mpanel_mouse_entered():
+	emit_signal("maskToggled")

@@ -13,6 +13,7 @@ func _on_cam03_pressed():
 	emit_signal("camChanged", "closet")
 func _on_cam04_pressed():
 	$blip.play()
+	$changeMusic.show()
 	emit_signal("camChanged", "kitchen")
 func _on_cam05_pressed():
 	$blip.play()

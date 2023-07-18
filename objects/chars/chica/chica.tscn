@@ -21,9 +21,10 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="canvas" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="uhoh" type="AnimatedSprite" parent="canvas"]
-position = Vector2( 982, 560 )
+position = Vector2( 973, 550 )
 scale = Vector2( 0.542857, 0.542857 )
 frames = SubResource( 1 )
 animation = "off"

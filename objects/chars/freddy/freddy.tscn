@@ -124,6 +124,7 @@ shape = SubResource( 4 )
 autostart = true
 
 [node name="background" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 5 )
 
 [node name="fredSprite" type="AnimatedSprite" parent="."]
@@ -147,3 +148,4 @@ wait_time = 0.5
 [connection signal="area_exited" from="area" to="." method="_on_area_area_exited"]
 [connection signal="timeout" from="freddyTimer" to="." method="_on_freddyTimer_timeout"]
 [connection signal="frame_changed" from="fredSprite" to="." method="_on_fredSprite_frame_changed"]
+[connection signal="timeout" from="killTimer" to="." method="_on_killTimer_timeout"]

@@ -11,8 +11,6 @@ var active = true
 var lookedAt = false
 var inOffice = false
 var rng = RandomNumberGenerator.new()
-signal dead(character)
-signal makeStatic
 
 
 func _ready():
@@ -38,7 +36,6 @@ func _process(delta):
 	elif phase >= 5:
 		coveAnim.frame = 5
 		if is_instance_valid(camHitbox):
-			print("wow")
 			camHitbox.queue_free()
 			lookedAt = false
 	if Global.cam == true:
@@ -47,8 +44,9 @@ func _process(delta):
 		rng.randomize()
 		var deathChance = rng.randi_range(1,10)
 		if deathChance == 1:
-			if Global.jumpscare == "none":
-				Global.jumpscare = "foxy"
+			if Overlay.alive == true:
+				Overlay.alive = false
+				Overlay.jumpscareMoment("foxy", 1)
 
 func _on_detectCamera_area_entered(area):
 	progress = 0

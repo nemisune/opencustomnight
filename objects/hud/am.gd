@@ -8,3 +8,7 @@ func _on_Timer_timeout():
 	else:
 		hour += 1
 	text = str(hour)+("AM")
+
+func resetLol():
+	hour = 12
+	text = str(hour)+("AM")

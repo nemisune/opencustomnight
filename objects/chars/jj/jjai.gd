@@ -9,7 +9,8 @@ var countdown
 var phase = 0
 
 func _ready():
-	pass
+	print("Little Shit No. 2 loaded")
+	Overlay.connect("monitorOn", self, "littleShit") 
 
 func littleShit():
 	if Global.rventOcc == false && animation.current_animation != "office":

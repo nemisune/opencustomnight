@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/goodluck.mp3-2d3480124be7e85c312dfb64d8a6d463.mp3str"
+
+[deps]
+
+source_file="res://audio/menu/goodluck.mp3"
+dest_files=[ "res://.import/goodluck.mp3-2d3480124be7e85c312dfb64d8a6d463.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

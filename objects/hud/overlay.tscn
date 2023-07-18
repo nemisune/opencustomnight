@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=2]
+[gd_scene load_steps=301 format=2]
 
 [ext_resource path="res://sprites/monitor/118.png" type="Texture" id=1]
 [ext_resource path="res://font/minsans/MinSans-Regular.otf" type="DynamicFontData" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://sprites/monitor/11a.png" type="Texture" id=12]
 [ext_resource path="res://objects/hud/overlay.gd" type="Script" id=13]
 [ext_resource path="res://objects/hud/camcontrol.gd" type="Script" id=14]
-[ext_resource path="res://objects/hud/cambutton.tres" type="Theme" id=15]
+[ext_resource path="res://objects/hud/themes/cambutton.tres" type="Theme" id=15]
 [ext_resource path="res://sprites/hud/minimap.png" type="Texture" id=16]
 [ext_resource path="res://sprites/char/freddy/39c.png" type="Texture" id=17]
 [ext_resource path="res://sprites/char/freddy/39d.png" type="Texture" id=18]
@@ -102,7 +102,7 @@
 [ext_resource path="res://sprites/char/toychica/3c5.png" type="Texture" id=100]
 [ext_resource path="res://sprites/char/toychica/3c6.png" type="Texture" id=101]
 [ext_resource path="res://sprites/char/toychica/3c4.png" type="Texture" id=102]
-[ext_resource path="res://objects/hud/biggerbutton.tres" type="Theme" id=103]
+[ext_resource path="res://objects/hud/themes/biggerbutton.tres" type="Theme" id=103]
 [ext_resource path="res://icon.png" type="Texture" id=104]
 [ext_resource path="res://sprites/char/mangle/325.png" type="Texture" id=105]
 [ext_resource path="res://sprites/char/mangle/327.png" type="Texture" id=106]
@@ -180,6 +180,168 @@
 [ext_resource path="res://sprites/hud/mask/89.png" type="Texture" id=178]
 [ext_resource path="res://sprites/hud/mask/141.png" type="Texture" id=179]
 [ext_resource path="res://audio/deepbreaths.wav" type="AudioStream" id=180]
+[ext_resource path="res://sprites/char/scrap/586.png" type="Texture" id=181]
+[ext_resource path="res://sprites/char/scrap/588.png" type="Texture" id=182]
+[ext_resource path="res://sprites/char/scrap/577.png" type="Texture" id=183]
+[ext_resource path="res://sprites/char/scrap/580.png" type="Texture" id=184]
+[ext_resource path="res://sprites/char/scrap/573.png" type="Texture" id=185]
+[ext_resource path="res://sprites/char/scrap/576.png" type="Texture" id=186]
+[ext_resource path="res://sprites/char/scrap/578.png" type="Texture" id=187]
+[ext_resource path="res://sprites/char/scrap/579.png" type="Texture" id=188]
+[ext_resource path="res://sprites/char/scrap/581.png" type="Texture" id=189]
+[ext_resource path="res://sprites/char/scrap/575.png" type="Texture" id=190]
+[ext_resource path="res://sprites/char/scrap/582.png" type="Texture" id=191]
+[ext_resource path="res://sprites/char/scrap/584.png" type="Texture" id=192]
+[ext_resource path="res://sprites/char/scrap/585.png" type="Texture" id=193]
+[ext_resource path="res://sprites/char/scrap/583.png" type="Texture" id=194]
+[ext_resource path="res://sprites/char/scrap/57b.png" type="Texture" id=195]
+[ext_resource path="res://sprites/char/scrap/57c.png" type="Texture" id=196]
+[ext_resource path="res://sprites/char/scrap/57d.png" type="Texture" id=197]
+[ext_resource path="res://sprites/char/scrap/57f.png" type="Texture" id=198]
+[ext_resource path="res://sprites/char/scrap/57a.png" type="Texture" id=199]
+[ext_resource path="res://sprites/char/scrap/57e.png" type="Texture" id=200]
+[ext_resource path="res://sprites/hud/static/129.png" type="Texture" id=201]
+[ext_resource path="res://sprites/hud/static/125.png" type="Texture" id=202]
+[ext_resource path="res://objects/hud/static.gd" type="Script" id=203]
+[ext_resource path="res://sprites/hud/static/117.png" type="Texture" id=204]
+[ext_resource path="res://sprites/hud/static/123.png" type="Texture" id=205]
+[ext_resource path="res://sprites/hud/static/126.png" type="Texture" id=206]
+[ext_resource path="res://sprites/static/123.png" type="Texture" id=207]
+[ext_resource path="res://sprites/static/117.png" type="Texture" id=208]
+[ext_resource path="res://objects/hud/monitormask.gd" type="Script" id=209]
+[ext_resource path="res://sprites/static/119.png" type="Texture" id=210]
+[ext_resource path="res://sprites/static/125.png" type="Texture" id=211]
+[ext_resource path="res://sprites/static/126.png" type="Texture" id=212]
+[ext_resource path="res://sprites/static/129.png" type="Texture" id=213]
+[ext_resource path="res://sprites/gameover/gameover.png" type="Texture" id=214]
+[ext_resource path="res://sprites/hud/gameover.png" type="Texture" id=215]
+[ext_resource path="res://audio/static2.mp3" type="AudioStream" id=216]
+[ext_resource path="res://audio/gameover.mp3" type="AudioStream" id=217]
+[ext_resource path="res://audio/screams/fnaf3scream.wav" type="AudioStream" id=218]
+[ext_resource path="res://audio/screams/fnaf2scream.wav" type="AudioStream" id=219]
+[ext_resource path="res://audio/screams/fnaf6scream.wav" type="AudioStream" id=220]
+[ext_resource path="res://audio/screams/fnaf5scream.wav" type="AudioStream" id=221]
+[ext_resource path="res://audio/screams/fnaf4scream.wav" type="AudioStream" id=222]
+[ext_resource path="res://audio/screams/jumpscareb.wav" type="AudioStream" id=223]
+[ext_resource path="res://sprites/char/fredbear/15f.png" type="Texture" id=224]
+[ext_resource path="res://sprites/char/fredbear/15d.png" type="Texture" id=225]
+[ext_resource path="res://sprites/char/fredbear/14b.png" type="Texture" id=226]
+[ext_resource path="res://sprites/char/fredbear/14e.png" type="Texture" id=227]
+[ext_resource path="res://sprites/char/fredbear/14d.png" type="Texture" id=228]
+[ext_resource path="res://sprites/char/fredbear/14f.png" type="Texture" id=229]
+[ext_resource path="res://sprites/char/fredbear/15b.png" type="Texture" id=230]
+[ext_resource path="res://sprites/char/fredbear/15a.png" type="Texture" id=231]
+[ext_resource path="res://sprites/char/fredbear/15c.png" type="Texture" id=232]
+[ext_resource path="res://audio/winnight.wav" type="AudioStream" id=233]
+[ext_resource path="res://sprites/menu/6amtext.png" type="Texture" id=234]
+[ext_resource path="res://sprites/char/nightfreddy/3f7.png" type="Texture" id=235]
+[ext_resource path="res://sprites/char/nightfreddy/3f8.png" type="Texture" id=236]
+[ext_resource path="res://sprites/char/nightfreddy/3f9.png" type="Texture" id=237]
+[ext_resource path="res://sprites/char/nightfreddy/3fa.png" type="Texture" id=238]
+[ext_resource path="res://sprites/char/nightfreddy/3fb.png" type="Texture" id=239]
+[ext_resource path="res://sprites/char/nightfreddy/3f2.png" type="Texture" id=240]
+[ext_resource path="res://sprites/char/nightfreddy/3f6.png" type="Texture" id=241]
+[ext_resource path="res://sprites/char/nightfreddy/3f5.png" type="Texture" id=242]
+[ext_resource path="res://sprites/char/nightfreddy/3fc.png" type="Texture" id=243]
+[ext_resource path="res://sprites/char/nightfreddy/404.png" type="Texture" id=244]
+[ext_resource path="res://sprites/char/nightfreddy/408.png" type="Texture" id=245]
+[ext_resource path="res://sprites/char/nightfreddy/405.png" type="Texture" id=246]
+[ext_resource path="res://sprites/char/nightfreddy/400.png" type="Texture" id=247]
+[ext_resource path="res://sprites/char/nightfreddy/3ff.png" type="Texture" id=248]
+[ext_resource path="res://sprites/char/nightfreddy/401.png" type="Texture" id=249]
+[ext_resource path="res://sprites/char/nightfreddy/406.png" type="Texture" id=250]
+[ext_resource path="res://sprites/char/nightfreddy/3fe.png" type="Texture" id=251]
+[ext_resource path="res://sprites/char/nightfreddy/3fd.png" type="Texture" id=252]
+[ext_resource path="res://sprites/char/nightfreddy/402.png" type="Texture" id=253]
+[ext_resource path="res://sprites/char/nightfreddy/403.png" type="Texture" id=254]
+[ext_resource path="res://sprites/char/goldy/bd.png" type="Texture" id=255]
+[ext_resource path="res://sprites/char/puppet/1ca.png" type="Texture" id=256]
+[ext_resource path="res://sprites/char/puppet/1cb.png" type="Texture" id=257]
+[ext_resource path="res://sprites/char/puppet/1c6.png" type="Texture" id=258]
+[ext_resource path="res://sprites/char/puppet/1c7.png" type="Texture" id=259]
+[ext_resource path="res://sprites/char/puppet/1c8.png" type="Texture" id=260]
+[ext_resource path="res://sprites/char/puppet/1c4.png" type="Texture" id=261]
+[ext_resource path="res://sprites/char/puppet/1c5.png" type="Texture" id=262]
+[ext_resource path="res://sprites/char/puppet/1c9.png" type="Texture" id=263]
+[ext_resource path="res://sprites/char/puppet/1c2.png" type="Texture" id=264]
+[ext_resource path="res://sprites/char/puppet/1c3.png" type="Texture" id=265]
+[ext_resource path="res://sprites/char/puppet/1cc.png" type="Texture" id=266]
+[ext_resource path="res://sprites/char/puppet/1cd.png" type="Texture" id=267]
+[ext_resource path="res://sprites/char/puppet/1ce.png" type="Texture" id=268]
+[ext_resource path="res://sprites/char/puppet/1d3.png" type="Texture" id=269]
+[ext_resource path="res://sprites/char/puppet/1d1.png" type="Texture" id=270]
+[ext_resource path="res://sprites/char/puppet/1d0.png" type="Texture" id=271]
+[ext_resource path="res://sprites/char/puppet/1cf.png" type="Texture" id=272]
+[ext_resource path="res://sprites/char/puppet/1d2.png" type="Texture" id=273]
+[ext_resource path="res://sprites/char/puppet/1d5.png" type="Texture" id=274]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "chica",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 137 ), ExtResource( 130 ), ExtResource( 128 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 127 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 136 ), ExtResource( 135 ), ExtResource( 122 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 118 ), ExtResource( 119 ) ],
+"loop": true,
+"name": "foxy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 226 ), ExtResource( 228 ), ExtResource( 227 ), ExtResource( 229 ), ExtResource( 231 ), ExtResource( 230 ), ExtResource( 232 ), ExtResource( 225 ), ExtResource( 224 ) ],
+"loop": true,
+"name": "fredbear",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 29 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "freddy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 255 ) ],
+"loop": true,
+"name": "goldy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 116 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 115 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 117 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 105 ), ExtResource( 114 ), ExtResource( 106 ) ],
+"loop": true,
+"name": "mangle",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 240 ), ExtResource( 245 ), ExtResource( 242 ), ExtResource( 241 ), ExtResource( 235 ), ExtResource( 236 ), ExtResource( 237 ), ExtResource( 238 ), ExtResource( 239 ), ExtResource( 243 ), ExtResource( 252 ), ExtResource( 251 ), ExtResource( 248 ), ExtResource( 247 ), ExtResource( 249 ), ExtResource( 253 ), ExtResource( 254 ), ExtResource( 244 ), ExtResource( 246 ), ExtResource( 250 ) ],
+"loop": true,
+"name": "nightfreddy",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "none",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 264 ), ExtResource( 265 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ), ExtResource( 263 ), ExtResource( 256 ), ExtResource( 257 ), ExtResource( 266 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 272 ), ExtResource( 271 ), ExtResource( 270 ), ExtResource( 273 ), ExtResource( 269 ), ExtResource( 274 ) ],
+"loop": true,
+"name": "puppet",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 199 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 200 ), ExtResource( 198 ), ExtResource( 185 ), ExtResource( 190 ), ExtResource( 186 ), ExtResource( 183 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 184 ), ExtResource( 189 ), ExtResource( 191 ), ExtResource( 194 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 181 ), ExtResource( 182 ) ],
+"loop": true,
+"name": "scrap",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 147 ), ExtResource( 141 ), ExtResource( 148 ), ExtResource( 146 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 138 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 139 ), ExtResource( 153 ), ExtResource( 154 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 145 ) ],
+"loop": true,
+"name": "teddy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 94 ), ExtResource( 95 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 92 ), ExtResource( 99 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 102 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 96 ) ],
+"loop": true,
+"name": "thica",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 74 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 80 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 81 ), ExtResource( 76 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "tonnie",
+"speed": 30.0
+} ]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
@@ -227,6 +389,96 @@ shader_param/zoom = 300.0
 shader_param/pDir = false
 shader_param/noWrap = true
 
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 204 ), ExtResource( 205 ), ExtResource( 202 ), ExtResource( 206 ), ExtResource( 201 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.176471 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.176471 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ null, ExtResource( 179 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 178 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "on",
+"speed": 60.0
+} ]
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("breathing:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "breathing"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 18 ), Vector2( 0, -18 ) ]
+}
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 166 ) ],
@@ -245,48 +497,224 @@ animations = [ {
 "speed": 60.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "chica",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 137 ), ExtResource( 130 ), ExtResource( 128 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 127 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 136 ), ExtResource( 135 ), ExtResource( 122 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 118 ), ExtResource( 119 ) ],
-"loop": true,
-"name": "foxy",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 29 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "freddy",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 116 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 115 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 117 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 105 ), ExtResource( 114 ), ExtResource( 106 ) ],
-"loop": true,
-"name": "mangle",
-"speed": 30.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "none",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 147 ), ExtResource( 141 ), ExtResource( 148 ), ExtResource( 146 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 138 ), ExtResource( 155 ), ExtResource( 144 ), ExtResource( 139 ), ExtResource( 153 ), ExtResource( 154 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 145 ) ],
-"loop": true,
-"name": "teddy",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 95 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 92 ), ExtResource( 99 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 102 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 96 ) ],
-"loop": true,
-"name": "thica",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 73 ), ExtResource( 74 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 80 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 81 ), ExtResource( 76 ), ExtResource( 82 ) ],
-"loop": true,
-"name": "tonnie",
-"speed": 30.0
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("monitor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mpanel:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("mpanel:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 236, 576 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cpanel:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 544, 576 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cpanel:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("mask:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "camDown"
+length = 0.15
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("monitor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mpanel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 236, 574 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("mpanel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "camOff"
 } ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "camUp"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("monitor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15, 0.166667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mpanel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 236, 640 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("mpanel:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "camOn"
+} ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "maskDown"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("mask:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "maskUp"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("mask:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
+}
 
 [sub_resource type="DynamicFont" id=9]
 size = 33
@@ -363,50 +791,145 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.988235, 0.94902, 1 ), Color( 1, 0.972549, 0.882353, 1 ), Color( 1, 0.933333, 0.729412, 1 ), Color( 1, 0.854902, 0.415686, 1 ), Color( 1, 0.643137, 0.184314, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ null, ExtResource( 179 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 178 ), ExtResource( 62 ) ],
-"loop": false,
-"name": "on",
-"speed": 60.0
+"frames": [ ExtResource( 208 ), ExtResource( 210 ), ExtResource( 207 ), ExtResource( 211 ), ExtResource( 212 ), ExtResource( 213 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
 } ]
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=31]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:offset")
+tracks/0/path = NodePath("static:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("static2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("static2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 624 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("govoice:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "static"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("static:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("static2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("static2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
-
-[sub_resource type="Animation" id=21]
-resource_name = "breathing"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 4 ),
+tracks/4/type = "value"
+tracks/4/path = NodePath("govoice:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2.9, 3, 4.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 18 ), Vector2( 0, -18 ) ]
+"update": 1,
+"values": [ false, true, false ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=33]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("monitor:frame")
+tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -415,69 +938,160 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 12 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
-
-[sub_resource type="Animation" id=12]
-resource_name = "camDown"
-length = 0.216667
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/path = NodePath("monitor:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15, 0.166667, 0.183333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "camUp"
-length = 0.233333
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/path = NodePath("monitor:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15, 0.166667, 0.183333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
-}
-
-[sub_resource type="Animation" id=13]
-resource_name = "looking"
-length = 0.1
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("monitor:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("6Amtext:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -632 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("chimes:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("chimes:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "play"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("6Amtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.3, 6.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("chimes:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("chimes:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 7.5, 10 ),
+"transitions": PoolRealArray( 1, 2, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -44.436 ]
 }
 
 [node name="overlay" type="CanvasLayer"]
 layer = 2
 script = ExtResource( 13 )
 __meta__ = {
-"_edit_vertical_guides_": [ 1251.0, 500.0 ],
 "_editor_description_": ""
 }
 
+[node name="jumpscare" type="AnimatedSprite" parent="."]
+position = Vector2( 511.5, 301 )
+scale = Vector2( 2.13958, 2.22222 )
+frames = SubResource( 2 )
+animation = "none"
+speed_scale = 1.5
+playing = true
+
+[node name="testbg" type="ColorRect" parent="."]
+visible = false
+margin_right = 1077.0
+margin_bottom = 606.0
+mouse_filter = 2
+color = Color( 0.160784, 0.129412, 0.129412, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="effect" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="perspective" type="Sprite" parent="effect"]
 material = SubResource( 5 )
@@ -488,30 +1102,32 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="monitor" type="AnimatedSprite" parent="."]
-position = Vector2( 512, 300 )
-scale = Vector2( 2.13333, 2.22222 )
-z_index = 3
-frames = SubResource( 1 )
-animation = "off"
-frame = 10
-
-[node name="jumpscare" type="AnimatedSprite" parent="."]
-position = Vector2( 511.5, 301 )
-scale = Vector2( 2.13958, 2.22222 )
-frames = SubResource( 2 )
-animation = "none"
-
 [node name="camHUD" type="Node2D" parent="."]
 visible = false
 position = Vector2( 363, 300 )
 scale = Vector2( 2.13333, 2.22222 )
-z_index = 3
+z_as_relative = false
 script = ExtResource( 14 )
+
+[node name="static" type="AnimatedSprite" parent="camHUD"]
+self_modulate = Color( 1, 1, 1, 0.176471 )
+position = Vector2( 69.8439, 0 )
+frames = SubResource( 25 )
+frame = 3
+playing = true
+script = ExtResource( 203 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="staticPlayer" type="AnimationPlayer" parent="camHUD/static"]
+anims/RESET = SubResource( 26 )
+anims/fade = SubResource( 27 )
 
 [node name="minimap" type="Sprite" parent="camHUD"]
 position = Vector2( 152.293, 37.8875 )
 scale = Vector2( 0.250571, 0.250571 )
+z_index = 1
 texture = ExtResource( 16 )
 
 [node name="cam02" type="Button" parent="camHUD/minimap"]
@@ -579,59 +1195,109 @@ theme = ExtResource( 15 )
 text = "CAM01"
 
 [node name="ventsys" type="Button" parent="camHUD"]
-margin_left = 204.0
-margin_top = -91.0
-margin_right = 298.0
-margin_bottom = -70.0
+margin_left = 325.782
+margin_top = -235.8
+margin_right = 445.782
+margin_bottom = -211.8
 theme = ExtResource( 103 )
 text = "VENT SYSTEM"
 
 [node name="camsys" type="Button" parent="camHUD"]
-margin_left = 204.0
-margin_top = -68.0
-margin_right = 298.0
-margin_bottom = -47.0
+margin_left = 325.782
+margin_top = -210.8
+margin_right = 445.782
+margin_bottom = -186.8
 theme = ExtResource( 103 )
 text = "CAM SYSTEM"
 
 [node name="changeMusic" type="Button" parent="camHUD"]
-margin_left = 204.0
-margin_top = -45.0
-margin_right = 298.0
-margin_bottom = -24.0
+visible = false
+margin_left = 182.344
+margin_top = -67.0501
+margin_right = 302.344
+margin_bottom = -43.0501
 theme = ExtResource( 103 )
 text = "CHANGE MUSIC"
 
 [node name="blip" type="AudioStreamPlayer" parent="camHUD"]
 stream = ExtResource( 162 )
 
-[node name="panels" type="Node2D" parent="."]
-z_index = 3
-
-[node name="mbutton" type="TextureButton" parent="panels"]
-margin_left = 285.0
-margin_top = 581.0
-margin_right = 495.0
+[node name="monitormask" type="Control" parent="."]
+margin_right = 1024.0
 margin_bottom = 600.0
-texture_normal = ExtResource( 60 )
-expand = true
+mouse_filter = 2
+script = ExtResource( 209 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="cbutton" type="TextureButton" parent="panels"]
-margin_left = 505.0
-margin_top = 581.0
-margin_right = 715.0
-margin_bottom = 600.0
+[node name="mask" type="AnimatedSprite" parent="monitormask"]
+position = Vector2( 511, 240 )
+scale = Vector2( 1, 1.04514 )
+z_index = 2
+frames = SubResource( 3 )
+animation = "on"
+
+[node name="breathing" type="AudioStreamPlayer" parent="monitormask/mask"]
+stream = ExtResource( 180 )
+
+[node name="maskanimation" type="AnimationPlayer" parent="monitormask/mask"]
+anims/RESET = SubResource( 20 )
+anims/breathing = SubResource( 21 )
+
+[node name="maskon" type="AudioStreamPlayer" parent="monitormask/mask"]
+stream = ExtResource( 161 )
+
+[node name="maskoff" type="AudioStreamPlayer" parent="monitormask/mask"]
+stream = ExtResource( 159 )
+
+[node name="monitor" type="AnimatedSprite" parent="monitormask"]
+position = Vector2( 512, 300 )
+scale = Vector2( 2.13333, 2.22222 )
+z_as_relative = false
+frames = SubResource( 1 )
+animation = "on"
+
+[node name="camup" type="AudioStreamPlayer" parent="monitormask/monitor"]
+stream = ExtResource( 160 )
+
+[node name="camdown" type="AudioStreamPlayer" parent="monitormask/monitor"]
+stream = ExtResource( 158 )
+
+[node name="cpanel" type="TextureButton" parent="monitormask"]
+margin_left = 544.0
+margin_top = 576.0
+margin_right = 845.0
+margin_bottom = 601.0
+mouse_filter = 1
 texture_normal = ExtResource( 11 )
 expand = true
 
+[node name="mpanel" type="TextureButton" parent="monitormask"]
+margin_left = 236.0
+margin_top = 576.0
+margin_right = 537.0
+margin_bottom = 601.0
+mouse_filter = 1
+texture_normal = ExtResource( 60 )
+expand = true
+
+[node name="cameraAnim" type="AnimationPlayer" parent="monitormask"]
+anims/RESET = SubResource( 22 )
+anims/camDown = SubResource( 24 )
+anims/camUp = SubResource( 23 )
+anims/maskDown = SubResource( 28 )
+anims/maskUp = SubResource( 29 )
+
 [node name="hudElements" type="Node2D" parent="."]
-z_index = 3
+z_index = 2
 
 [node name="power" type="RichTextLabel" parent="hudElements"]
 margin_left = 17.0
 margin_top = 519.0
 margin_right = 170.0
 margin_bottom = 555.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 9 )
 text = "100%"
 scroll_active = false
@@ -649,6 +1315,7 @@ script = ExtResource( 170 )
 margin_left = 911.0
 margin_right = 1028.0
 margin_bottom = 36.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 15 )
 text = "12AM"
 scroll_active = false
@@ -656,13 +1323,13 @@ script = ExtResource( 171 )
 
 [node name="Timer" type="Timer" parent="hudElements/am"]
 wait_time = 45.0
-autostart = true
 
 [node name="usagebar" type="ColorRect" parent="hudElements"]
-margin_left = 20.0
-margin_top = 555.0
-margin_right = 127.0
-margin_bottom = 567.0
+margin_left = 21.0
+margin_top = 572.0
+margin_right = 128.0
+margin_bottom = 584.0
+mouse_filter = 2
 theme = SubResource( 17 )
 color = Color( 1, 0, 0, 1 )
 script = ExtResource( 177 )
@@ -674,59 +1341,110 @@ anims/working = SubResource( 19 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="hudElements"]
 margin_left = 20.0
-margin_top = 559.0
+margin_top = 547.0
 margin_right = 94.0
-margin_bottom = 586.0
+margin_bottom = 574.0
+mouse_filter = 2
 theme = ExtResource( 169 )
-text = "usage"
+text = "usage:"
 scroll_active = false
 
 [node name="version" type="RichTextLabel" parent="hudElements"]
 self_modulate = Color( 1, 1, 1, 0.309804 )
-margin_left = 934.0
-margin_top = 572.0
-margin_right = 1054.0
-margin_bottom = 612.0
+margin_left = 864.0
+margin_top = 574.0
+margin_right = 1038.0
+margin_bottom = 626.0
+mouse_filter = 2
 theme = ExtResource( 169 )
-text = "alpha 1.1"
-
-[node name="mask" type="AnimatedSprite" parent="."]
-position = Vector2( 512, 302.334 )
-scale = Vector2( 1, 1.04514 )
-z_index = 3
-frames = SubResource( 3 )
-animation = "on"
-
-[node name="breathing" type="AudioStreamPlayer" parent="mask"]
-stream = ExtResource( 180 )
-
-[node name="maskanimation" type="AnimationPlayer" parent="mask"]
-anims/RESET = SubResource( 20 )
-anims/breathing = SubResource( 21 )
+text = "unfinished beta"
 
 [node name="scaretimer" type="Timer" parent="."]
-wait_time = 2.5
+one_shot = true
 
-[node name="camup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 160 )
+[node name="gameover" type="Node2D" parent="."]
+position = Vector2( 0, 624 )
+z_index = 99
 
-[node name="camdown" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 158 )
+[node name="static" type="AnimatedSprite" parent="gameover"]
+modulate = Color( 0.564706, 0, 0, 1 )
+position = Vector2( 512, 298.5 )
+scale = Vector2( 2.18333, 2.32222 )
+frames = SubResource( 30 )
+frame = 2
+playing = true
 
-[node name="maskon" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 161 )
+[node name="goscreen" type="Sprite" parent="gameover"]
+self_modulate = Color( 1, 1, 1, 0.211765 )
+position = Vector2( 529, 301 )
+scale = Vector2( 0.833333, 0.833333 )
+texture = ExtResource( 214 )
 
-[node name="maskoff" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 159 )
+[node name="gotext" type="Sprite" parent="gameover"]
+position = Vector2( 511, 301 )
+texture = ExtResource( 215 )
 
-[node name="animPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 10 )
-anims/camDown = SubResource( 12 )
-anims/camUp = SubResource( 11 )
-anims/looking = SubResource( 13 )
+[node name="static2" type="AnimatedSprite" parent="gameover"]
+modulate = Color( 0.627451, 0, 0, 1 )
+position = Vector2( 512, 298.5 )
+scale = Vector2( 2.18333, 2.32222 )
+frames = SubResource( 30 )
+frame = 2
+playing = true
 
-[connection signal="frame_changed" from="monitor" to="." method="_on_monitor_frame_changed"]
+[node name="gameover" type="AnimationPlayer" parent="gameover"]
+anims/RESET = SubResource( 31 )
+anims/static = SubResource( 32 )
+
+[node name="gostatic" type="AudioStreamPlayer" parent="gameover"]
+stream = ExtResource( 216 )
+
+[node name="govoice" type="AudioStreamPlayer" parent="gameover"]
+stream = ExtResource( 217 )
+
+[node name="scream" type="Node2D" parent="."]
+
+[node name="scream1" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 223 )
+
+[node name="scream2" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 219 )
+
+[node name="scream3" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 218 )
+
+[node name="scream4" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 222 )
+
+[node name="scream5" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 221 )
+
+[node name="scream6" type="AudioStreamPlayer" parent="scream"]
+stream = ExtResource( 220 )
+
+[node name="6am" type="Node2D" parent="."]
+position = Vector2( 0, -632 )
+z_index = 99
+
+[node name="bg" type="ColorRect" parent="6am"]
+margin_right = 1028.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="6Amtext" type="Sprite" parent="6am"]
+position = Vector2( 512, 300 )
+texture = ExtResource( 234 )
+
+[node name="6amplayer" type="AnimationPlayer" parent="6am"]
+anims/RESET = SubResource( 33 )
+anims/play = SubResource( 34 )
+
+[node name="chimes" type="AudioStreamPlayer" parent="6am"]
+stream = ExtResource( 233 )
+
+[connection signal="monitorOn" from="." to="camHUD/static" method="_on_overlay_monitorOn"]
 [connection signal="camChanged" from="camHUD" to="." method="_on_camHUD_camChanged"]
+[connection signal="camChanged" from="camHUD" to="camHUD/static" method="_on_camHUD_camChanged"]
 [connection signal="pressed" from="camHUD/minimap/cam02" to="camHUD" method="_on_cam02_pressed"]
 [connection signal="pressed" from="camHUD/minimap/cam03" to="camHUD" method="_on_cam03_pressed"]
 [connection signal="pressed" from="camHUD/minimap/cam04" to="camHUD" method="_on_cam04_pressed"]
@@ -738,9 +1456,11 @@ anims/looking = SubResource( 13 )
 [connection signal="pressed" from="camHUD/ventsys" to="." method="_on_ventsys_pressed"]
 [connection signal="pressed" from="camHUD/camsys" to="." method="_on_camsys_pressed"]
 [connection signal="pressed" from="camHUD/changeMusic" to="." method="_on_changeMusic_pressed"]
-[connection signal="mouse_entered" from="panels/mbutton" to="." method="_on_mbutton_mouse_entered"]
-[connection signal="mouse_entered" from="panels/cbutton" to="." method="mouseEntered"]
-[connection signal="mouse_entered" from="panels/cbutton" to="camHUD" method="_on_cbutton_mouse_entered"]
+[connection signal="mouse_entered" from="monitormask/cpanel" to="monitormask" method="_on_cpanel_mouse_entered"]
+[connection signal="mouse_entered" from="monitormask/mpanel" to="." method="_on_mpanel_mouse_entered"]
+[connection signal="mouse_entered" from="monitormask/mpanel" to="monitormask" method="_on_mpanel_mouse_entered"]
 [connection signal="timeout" from="hudElements/am/Timer" to="hudElements/am" method="_on_Timer_timeout"]
-[connection signal="animation_finished" from="mask" to="." method="_on_mask_animation_finished"]
 [connection signal="timeout" from="scaretimer" to="." method="_on_scaretimer_timeout"]
+[connection signal="animation_finished" from="gameover/gameover" to="." method="_on_gameover_animation_finished"]
+[connection signal="finished" from="gameover/gostatic" to="." method="_on_gostatic_finished"]
+[connection signal="animation_finished" from="6am/6amplayer" to="." method="_on_6amplayer_animation_finished"]

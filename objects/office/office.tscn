@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://sprites/office/room/717.png" type="Texture" id=1]
 [ext_resource path="res://sprites/office/fan/5ef.png" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://objects/office/office.gd" type="Script" id=6]
 [ext_resource path="res://audio/office/fan.wav" type="AudioStream" id=7]
 [ext_resource path="res://audio/office/click2.wav" type="AudioStream" id=8]
+[ext_resource path="res://sprites/office/room/905.png" type="Texture" id=9]
+[ext_resource path="res://sprites/office/room/854.png" type="Texture" id=10]
+[ext_resource path="res://sprites/fx/dust/dust.png" type="Texture" id=11]
+[ext_resource path="res://audio/powerdown.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -66,17 +70,273 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 )
 }
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("854:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("905:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "dimming1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("854:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("905:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7, 1, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "dimming2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("854:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7, 0.9, 1.1, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("905:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9, 1.1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.368627 ), Color( 1, 1, 1, 0.168627 ), Color( 1, 1, 1, 0.337255 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "dimming3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("854:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.6, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("905:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 1.1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.466667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.466667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.466667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.466667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.466667 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.533333 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "poweroff"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("854:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.862745 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("905:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "shake"
+length = 0.2
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 4.0, -4.0 ]
+}
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0.0189394, 0.00920248 ), 0.0, 0.0, 0, 0, Vector2( 0.155303, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.796717, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+emission_shape = 1
+emission_sphere_radius = 700.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.01
+orbit_velocity_random = 0.0
+scale = 0.3
+scale_random = 0.07
+scale_curve = SubResource( 12 )
+color = Color( 0.945098, 0.905882, 0.733333, 0.815686 )
+
 [node name="office" type="AnimatedSprite"]
 frames = SubResource( 1 )
 script = ExtResource( 6 )
 
+[node name="854" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 10 )
+
+[node name="905" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 9 )
+
 [node name="desk" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 156 )
-z_index = 3
+position = Vector2( 0, 239 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 5
 frames = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="fan" type="AudioStreamPlayer2D" parent="desk"]
 stream = ExtResource( 7 )
@@ -89,3 +349,28 @@ anims/on = SubResource( 5 )
 
 [node name="click" type="AudioStreamPlayer2D" parent="desk"]
 stream = ExtResource( 8 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/dimming1 = SubResource( 8 )
+anims/dimming2 = SubResource( 9 )
+anims/dimming3 = SubResource( 10 )
+anims/poweroff = SubResource( 14 )
+anims/shake = SubResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 56, -453 )
+amount = 20
+lifetime = 4.0
+randomness = 0.1
+process_material = SubResource( 13 )
+texture = ExtResource( 11 )
+
+[node name="powerdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

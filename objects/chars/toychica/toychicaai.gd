@@ -21,7 +21,11 @@ func spawnChance():
 	rng.randomize()
 	var spawnChance = rng.randi_range(0,49)
 	if spawnChance < Global.AI["toychica"]:
-		VFX.dimLights()
+		var effect = load("res://objects/fx/toyGlitching.tscn")
+		var effect_instance = effect.instance()
+		effect_instance.set_name("vfx")
+		add_child(effect_instance)
+		$sprite/animPlayer.playback_speed = 1
 		animation.play("entering")
 		spawnTimer.stop()
 		phase = 1
@@ -36,11 +40,13 @@ func _physics_process(delta):
 	if exposure >= 200:
 		exposure = 0
 		phase = 0
+		$sprite/animPlayer.playback_speed = 4
 		animation.play_backwards("entering")
-		VFX.stopDimming()
 		spawnTimer.start()
 		deathTimer.stop()
 		Audio.stopToyStare()
+		if has_node("vfx"):
+			get_node("vfx").queue_free()
 
 func mouseTouchingHitbox():
 	exposureRate = 2
@@ -50,8 +56,8 @@ func mouseLeavesHitbox():
 
 func deathTimer():
 	sprite.hide()
-	VFX.stopDimming()
 	Audio.stopToyStare()
-	if Global.jumpscareNow == "none":
-		Global.jumpscareNow = "thica"
-		emit_signal("killHim")
+	if has_node("vfx"):
+		get_node("vfx").queue_free()
+	Overlay.alive = false
+	Overlay.jumpscareMoment("thica", 2)

@@ -38,3 +38,21 @@ func _input(event):
 				Global.usage += 1
 			else:
 				Global.usage -= 1
+
+func powerOff():
+	Global.disableDoor = true
+	if Global.ldoor == true:
+		Global.ldoor = false
+		lsprite.play("play", true)
+		Global.usage -= 1
+		sfx.play()
+	if Global.rdoor == true:
+		Global.rdoor = false
+		rsprite.play("play", true)
+		Global.usage -= 1
+		sfx.play()
+	if Global.rvent == true:
+		Global.rvent = false
+		vsprite.play("play", true)
+		Global.usage -= 1
+		sfx.play()
