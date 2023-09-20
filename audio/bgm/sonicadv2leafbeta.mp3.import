@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sonicadv2leafbeta.mp3-493d7d8ed63274063d49836cfd183ab2.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/sonicadv2leafbeta.mp3"
+dest_files=[ "res://.import/sonicadv2leafbeta.mp3-493d7d8ed63274063d49836cfd183ab2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://sprites/cams/rhall.png" type="Texture" id=1]
 [ext_resource path="res://sprites/office/door/f8.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://sprites/cams/closet.png" type="Texture" id=30]
 [ext_resource path="res://sprites/fx/flash/fb.png" type="Texture" id=31]
 [ext_resource path="res://audio/jackinthebox.wav" type="AudioStream" id=32]
+[ext_resource path="res://objects/maingame/pause.gd" type="Script" id=33]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -315,7 +316,7 @@ scale = Vector2( 3.72593, 3.72593 )
 z_index = 5
 texture = ExtResource( 31 )
 
-[node name="powerText" type="Timer" parent="."]
+[node name="powerNum" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
@@ -336,8 +337,12 @@ stream = ExtResource( 32 )
 wait_time = 5.0
 one_shot = true
 
+[node name="pauser" type="Node2D" parent="."]
+pause_mode = 2
+script = ExtResource( 33 )
+
 [connection signal="timeout" from="pov/freq" to="." method="_on_freq_timeout"]
 [connection signal="timeout" from="pov/duration" to="." method="_on_duration_timeout"]
-[connection signal="timeout" from="powerText" to="." method="_on_powerConsumption_timeout"]
+[connection signal="timeout" from="powerNum" to="." method="_on_powerConsumption_timeout"]
 [connection signal="timeout" from="gameTimer" to="." method="_on_gameTimer_timeout"]
 [connection signal="timeout" from="uhOh" to="." method="_on_uhOh_timeout"]

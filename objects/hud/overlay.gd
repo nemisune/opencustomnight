@@ -27,6 +27,19 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept") && moveon == true:
 		endNight()
+	if Input.is_key_pressed(KEY_ESCAPE) && Global.mode == "game":
+		endNight()
+		Global.mode = "menu"
+	elif Input.is_key_pressed(KEY_ESCAPE) && Global.mode != "game":
+		match OS.get_name():
+			"Windows", "UWP":
+				get_tree().quit()
+	if Input.is_key_pressed(KEY_R) && Global.mode == "game":
+		Audio.stopBGM()
+		Audio.playBGM()
+		$songPlaying/songoverlayanim.play("RESET")
+		$songPlaying/songoverlayanim.play("popin")
+		$songPlaying/songOverlay/songName.text = str(Audio.title)
 
 func _on_gostatic_finished():
 	endNight()
@@ -39,6 +52,8 @@ func startGame():
 	$hudElements/timer.going = true
 	$monitormask/cpanel.show()
 	$monitormask/mpanel.show()
+	$songPlaying/songoverlayanim.play("popin")
+	$songPlaying/songOverlay/songName.text = str(Audio.title)
 	if Global.quality == 1:
 		$effect.show()
 	else:
@@ -58,6 +73,7 @@ func endNight():
 	$effect.hide()
 	$gameover/gostatic.stop()
 	Global.povLock = false
+	emit_signal("itsOver")
 	emit_signal("go2Menu")
 	moveon = false
 	alive = true
@@ -138,3 +154,7 @@ func _on_6amplayer_animation_finished(anim_name):
 
 func _on_mpanel_mouse_entered():
 	emit_signal("maskToggled")
+
+func _on_songoverlayanim_animation_finished(anim_name):
+	if anim_name == "popin":
+		$songPlaying/songoverlayanim.play("fade")

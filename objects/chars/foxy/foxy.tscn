@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://sprites/char/foxy/566.png" type="Texture" id=1]
 [ext_resource path="res://sprites/char/foxy/596.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sprites/char/foxy/5b9.png" type="Texture" id=11]
 [ext_resource path="res://sprites/char/foxy/5ba.png" type="Texture" id=12]
 [ext_resource path="res://sprites/char/foxy/5bd.png" type="Texture" id=13]
+[ext_resource path="res://audio/char/foxy/Pirate Song2.mp3" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -160,6 +161,9 @@ script = ExtResource( 6 )
 z_index = 7
 z_as_relative = false
 
+[node name="singing" type="AudioStreamPlayer2D" parent="camFoxy"]
+stream = ExtResource( 14 )
+
 [node name="piratesCove" type="AnimatedSprite" parent="camFoxy"]
 z_index = 7
 frames = SubResource( 1 )
@@ -208,5 +212,10 @@ anims/office = SubResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2( 3, 3 )
 
+[node name="waitTillSing" type="Timer" parent="."]
+wait_time = 13.0
+autostart = true
+
 [connection signal="area_entered" from="camFoxy/detectCamera" to="." method="_on_detectCamera_area_entered"]
 [connection signal="area_exited" from="camFoxy/detectCamera" to="." method="_on_detectCamera_area_exited"]
+[connection signal="timeout" from="waitTillSing" to="." method="_on_waitTillSing_timeout"]

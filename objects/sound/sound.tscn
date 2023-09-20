@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
+[ext_resource path="res://audio/bgm/sfrontiersworld.mp3" type="AudioStream" id=1]
 [ext_resource path="res://audio/musicbox/musicbox4.wav" type="AudioStream" id=2]
 [ext_resource path="res://audio/musicbox/musicbox3.wav" type="AudioStream" id=3]
 [ext_resource path="res://audio/musicbox/musicbox.wav" type="AudioStream" id=4]
@@ -8,8 +9,16 @@
 [ext_resource path="res://objects/sound/sound.gd" type="Script" id=7]
 [ext_resource path="res://audio/stare.wav" type="AudioStream" id=8]
 [ext_resource path="res://audio/blockb.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio/bgm/z1arcadiashrine.mp3" type="AudioStream" id=10]
 [ext_resource path="res://audio/bgm/sfrontiersbmb.mp3" type="AudioStream" id=11]
 [ext_resource path="res://audio/winnight.wav" type="AudioStream" id=12]
+[ext_resource path="res://audio/bgm/soniccdquartz.mp3" type="AudioStream" id=13]
+[ext_resource path="res://audio/bgm/z1crash.mp3" type="AudioStream" id=14]
+[ext_resource path="res://audio/bgm/megacdcossack2.mp3" type="AudioStream" id=15]
+[ext_resource path="res://audio/bgm/sfrontiersflow.mp3" type="AudioStream" id=16]
+[ext_resource path="res://audio/bgm/sonicadv2leafbeta.mp3" type="AudioStream" id=17]
+[ext_resource path="res://audio/bgm/ggxvenom.mp3" type="AudioStream" id=18]
+[ext_resource path="res://audio/bgm/ggxtestament.mp3" type="AudioStream" id=19]
 
 [node name="sound" type="Node2D"]
 script = ExtResource( 7 )
@@ -42,6 +51,72 @@ stream = ExtResource( 9 )
 [node name="bgm1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -25.0
+__meta__ = {
+"_editor_description_": "BMB - Sonic Frontiers"
+}
+
+[node name="bgm2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Dr. Cossack Stage 2 - Mega Man Anniversary CD"
+}
+
+[node name="bgm3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Flowing - Sonic Frontiers"
+}
+
+[node name="bgm4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Enjoy This World - Sonic Frontiers"
+}
+
+[node name="bgm5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -17.0
+__meta__ = {
+"_editor_description_": "Sonic Advance 2 Trailer Music"
+}
+
+[node name="bgm6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Quartz Quadrant (Present) - Sonic CD"
+}
+
+[node name="bgm7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Neo Arcadia Shrine - Mega Man Zero"
+}
+
+[node name="bgm8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Crash I - Mega Man Zero"
+}
+
+[node name="bgm9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "Bloodstained Lineage - Guilty Gear X"
+}
+
+[node name="bgm10" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -20.0
+__meta__ = {
+"_editor_description_": "A Solitude That Asks Nothing In Return - Guilty Gear X"
+}
 
 [node name="6am" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

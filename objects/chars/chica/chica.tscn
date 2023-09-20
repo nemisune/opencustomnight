@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/chars/chica/chicaai.gd" type="Script" id=1]
 [ext_resource path="res://audio/kitchen/potspans.wav" type="AudioStream" id=2]
 [ext_resource path="res://sprites/hud/chica.png" type="Texture" id=3]
+[ext_resource path="res://audio/char/chica/pizza.mp3" type="AudioStream" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -39,6 +40,9 @@ one_shot = true
 
 [node name="potsnpans" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+
+[node name="pizza" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="timeout" from="chicaTimer" to="." method="timerUpdate"]
 [connection signal="timeout" from="killTimer" to="." method="killCheck"]

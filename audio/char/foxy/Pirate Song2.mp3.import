@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pirate Song2.mp3-e56de65e00480413912e5d4a15a9c89a.mp3str"
+
+[deps]
+
+source_file="res://audio/char/foxy/Pirate Song2.mp3"
+dest_files=[ "res://.import/Pirate Song2.mp3-e56de65e00480413912e5d4a15a9c89a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

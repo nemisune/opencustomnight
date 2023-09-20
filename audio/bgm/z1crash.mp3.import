@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/z1crash.mp3-b742c949d9356688d9665c22c24847b9.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/z1crash.mp3"
+dest_files=[ "res://.import/z1crash.mp3-b742c949d9356688d9665c22c24847b9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

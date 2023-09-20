@@ -29,6 +29,7 @@ func timerUpdate():
 func checksMet():
 	warning.play("on")
 	print("checks met")
+	$pizza.play()
 	noise.stop()
 	timer.stop()
 	killTimer.start()

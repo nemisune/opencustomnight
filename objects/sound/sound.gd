@@ -2,6 +2,8 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 var song = 1
+var title
+var randomSong
 
 func playMusicBox():
 	rng.randomize()
@@ -33,10 +35,13 @@ func stopScream():
 	pass
 
 func playBGM():
-	$bgm1.play()
+	rng.randomize()
+	randomSong = 10
+	get_node("bgm"+str(randomSong)).play()
+	title = get_node("bgm"+str(randomSong)).editor_description
 
 func stopBGM():
-	$bgm1.stop()
+	get_node("bgm"+str(randomSong)).stop()
 
 func DingDong():
 	$"6am".play()

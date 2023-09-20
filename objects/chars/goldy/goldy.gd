@@ -16,7 +16,7 @@ func appear():
 		var spawnChance = rng.randi_range(1,40)
 		if spawnChance < Global.AI["goldy"] + 1:
 			$bg/anims.play("appear")
-			reactTime = 200 - Global.AI["goldy"]
+			reactTime = 250 - Global.AI["goldy"]
 			phase = 1
 
 func _process(_delta):

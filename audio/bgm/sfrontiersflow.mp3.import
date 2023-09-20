@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfrontiersflow.mp3-6b2d6996169e2b11523712f9e701c0c3.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/sfrontiersflow.mp3"
+dest_files=[ "res://.import/sfrontiersflow.mp3-6b2d6996169e2b11523712f9e701c0c3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

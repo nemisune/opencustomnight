@@ -1087,7 +1087,7 @@ position = Vector2( -13, 654 )
 scale = Vector2( 2.18958, 2.33704 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 5
+frame = 4
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -1345,7 +1345,7 @@ position = Vector2( 1429, 670 )
 scale = Vector2( 2.18958, 2.33704 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="fade6" type="Sprite" parent="credits"]
@@ -1452,7 +1452,7 @@ modulate = Color( 0.258824, 0.0823529, 0.0823529, 1 )
 scale = Vector2( 2.18958, 2.33704 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="static2" type="AnimatedSprite" parent="gl"]
@@ -1461,7 +1461,7 @@ self_modulate = Color( 1, 1, 1, 0.415686 )
 scale = Vector2( 2.46197, 2.62778 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [connection signal="pressed" from="main/settingsGo" to="." method="_on_settingsGo_pressed"]

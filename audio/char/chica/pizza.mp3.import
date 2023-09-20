@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pizza.mp3-dcf16cdebc7a4dff86039978036e9cb3.mp3str"
+
+[deps]
+
+source_file="res://audio/char/chica/pizza.mp3"
+dest_files=[ "res://.import/pizza.mp3-dcf16cdebc7a4dff86039978036e9cb3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

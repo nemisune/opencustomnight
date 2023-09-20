@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/soniccdquartz.mp3-ea8e278a629c430dbc4a30297b7450ef.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/soniccdquartz.mp3"
+dest_files=[ "res://.import/soniccdquartz.mp3-ea8e278a629c430dbc4a30297b7450ef.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -56,3 +56,10 @@ func _on_detectCamera_area_entered(area):
 func _on_detectCamera_area_exited(area):
 	lookedAt = false
 	print("Not")
+
+func _on_waitTillSing_timeout():
+	if phase == 0:
+		rng.randomize()
+		var chance2Sing = rng.randi_range(1,2)
+		if chance2Sing == 1:
+			$camFoxy/singing.play()

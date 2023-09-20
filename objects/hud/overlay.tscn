@@ -1,4 +1,4 @@
-[gd_scene load_steps=301 format=2]
+[gd_scene load_steps=305 format=2]
 
 [ext_resource path="res://sprites/monitor/118.png" type="Texture" id=1]
 [ext_resource path="res://font/minsans/MinSans-Regular.otf" type="DynamicFontData" id=2]
@@ -274,6 +274,7 @@
 [ext_resource path="res://sprites/char/puppet/1cf.png" type="Texture" id=272]
 [ext_resource path="res://sprites/char/puppet/1d2.png" type="Texture" id=273]
 [ext_resource path="res://sprites/char/puppet/1d5.png" type="Texture" id=274]
+[ext_resource path="res://sprites/hud/songoverlay.png" type="Texture" id=275]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -764,7 +765,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=19]
 resource_name = "working"
-length = 7.0
+length = 6.0
 step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_size")
@@ -773,10 +774,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 12 ), Vector2( 13, 12 ), Vector2( 26, 12 ), Vector2( 39, 12 ), Vector2( 52, 12 ), Vector2( 65, 12 ), Vector2( 78, 12 ), Vector2( 91, 12 ) ]
+"values": [ Vector2( 10, 12 ), Vector2( 24, 12 ), Vector2( 35, 12 ), Vector2( 65, 12 ), Vector2( 95, 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:color")
@@ -785,10 +786,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.988235, 0.94902, 1 ), Color( 1, 0.972549, 0.882353, 1 ), Color( 1, 0.933333, 0.729412, 1 ), Color( 1, 0.854902, 0.415686, 1 ), Color( 1, 0.643137, 0.184314, 1 ), Color( 1, 0, 0, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.933333, 0.729412, 1 ), Color( 1, 0.854902, 0.415686, 1 ), Color( 1, 0.643137, 0.184314, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
 [sub_resource type="SpriteFrames" id=30]
@@ -1065,6 +1066,90 @@ tracks/4/keys = {
 "values": [ 0.0, 0.0, -44.436 ]
 }
 
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("songOverlay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -368, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("songOverlay:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("songOverlay:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "fade"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("songOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "popin"
+length = 4.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("songOverlay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.53333 ),
+"transitions": PoolRealArray( 0.5, -0.5 ),
+"update": 0,
+"values": [ Vector2( -368, 64 ), Vector2( 352, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("songOverlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.53333 ),
+"transitions": PoolRealArray( 1, -0.5 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="overlay" type="CanvasLayer"]
 layer = 2
 script = ExtResource( 13 )
@@ -1113,7 +1198,7 @@ script = ExtResource( 14 )
 self_modulate = Color( 1, 1, 1, 0.176471 )
 position = Vector2( 69.8439, 0 )
 frames = SubResource( 25 )
-frame = 3
+frame = 4
 playing = true
 script = ExtResource( 203 )
 __meta__ = {
@@ -1351,13 +1436,13 @@ scroll_active = false
 
 [node name="version" type="RichTextLabel" parent="hudElements"]
 self_modulate = Color( 1, 1, 1, 0.309804 )
-margin_left = 864.0
-margin_top = 574.0
-margin_right = 1038.0
-margin_bottom = 626.0
+margin_left = 924.0
+margin_top = 576.0
+margin_right = 1098.0
+margin_bottom = 628.0
 mouse_filter = 2
 theme = ExtResource( 169 )
-text = "unfinished beta"
+text = "version#R"
 
 [node name="scaretimer" type="Timer" parent="."]
 one_shot = true
@@ -1442,6 +1527,30 @@ anims/play = SubResource( 34 )
 [node name="chimes" type="AudioStreamPlayer" parent="6am"]
 stream = ExtResource( 233 )
 
+[node name="songPlaying" type="Node2D" parent="."]
+
+[node name="songoverlayanim" type="AnimationPlayer" parent="songPlaying"]
+anims/RESET = SubResource( 36 )
+anims/fade = SubResource( 37 )
+anims/popin = SubResource( 35 )
+
+[node name="songOverlay" type="Node2D" parent="songPlaying"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -368, 64 )
+
+[node name="shadow" type="Sprite" parent="songPlaying/songOverlay"]
+position = Vector2( 10, 4 )
+scale = Vector2( 1, 0.213483 )
+texture = ExtResource( 275 )
+
+[node name="songName" type="RichTextLabel" parent="songPlaying/songOverlay"]
+margin_left = -347.0
+margin_top = -11.0
+margin_right = 212.0
+margin_bottom = 19.0
+theme = ExtResource( 169 )
+text = "TEMP NAME"
+
 [connection signal="monitorOn" from="." to="camHUD/static" method="_on_overlay_monitorOn"]
 [connection signal="camChanged" from="camHUD" to="." method="_on_camHUD_camChanged"]
 [connection signal="camChanged" from="camHUD" to="camHUD/static" method="_on_camHUD_camChanged"]
@@ -1464,3 +1573,4 @@ stream = ExtResource( 233 )
 [connection signal="animation_finished" from="gameover/gameover" to="." method="_on_gameover_animation_finished"]
 [connection signal="finished" from="gameover/gostatic" to="." method="_on_gostatic_finished"]
 [connection signal="animation_finished" from="6am/6amplayer" to="." method="_on_6amplayer_animation_finished"]
+[connection signal="animation_finished" from="songPlaying/songoverlayanim" to="." method="_on_songoverlayanim_animation_finished"]

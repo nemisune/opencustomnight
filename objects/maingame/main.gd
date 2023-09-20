@@ -10,6 +10,7 @@ onready var ventPov = $ventpov
 onready var camHitbox = $campov/camHitbox/camHitshape
 onready var kitchenSounds = get_node("/root/Audio/kitchensounds")
 var rng = RandomNumberGenerator.new()
+var paused = false
 var powerCounter
 var cadet
 var animatronic
@@ -19,8 +20,9 @@ const TRANS = Tween.TRANS_SINE
 const EASE = Tween.EASE_IN_OUT
 var amplitude = 0
 
-
 func _ready():
+	Global.mode = "game"
+	Audio.playBGM()
 	Overlay.startGame()
 	RichPresence.startNight()
 	connectSignals()
@@ -28,7 +30,6 @@ func _ready():
 	powerCounter = Overlay.get_node("hudElements/power")
 	kitchenSounds.position = $cameras/kitchen.position
 	Audio.playMusicBox()
-	Audio.playBGM()
 	for animatronic in ["cadet","freddy", "chica", "foxy", "bb", "jj", "toybonnie", "toychica", "scrap", "fredbear", "nightfreddy", "goldy"]:
 		load_char(animatronic)
 
@@ -50,35 +51,16 @@ func connectSignals():
 	Overlay.connect("sendLocation", self, "changeCam")
 	Overlay.connect("ventSys", self, "ventToggle")
 	Overlay.connect("camSys", self, "camToggle")
-	Overlay.connect("musicSwapped", self, "musicChanged")
 	Overlay.connect("go2Menu", self, "goToMenu")
 	Overlay.connect("itsOver", self, "delEverything")
 	Overlay.connect("camShake", self, "startShake")
 
-""" So basically what's going on up here is that it's preloading both the HUD and Candy Cadet animatronic so that they spawn in the office,
-it then also adds those two as children. Afterwards it uses plays an animation called "yeah" for the camMovement object that was defined
-earlier at the top of the script. That animation is set to loop and just makes it so the cameras automatically scroll. Then it just
-defines the power counter aka the little text at the bottom left that displays your percentage of power. Then things with audio are handled.
-"Audio.playMusicBox()" is a function that's run from the Global audio node to play the music box, it's also told to play the background music. 
-Last but not least, the animatronics are loaded into the scene.   """
-
-""" !! CHARACTER LOADING AND UNLOADING !! """
 func load_char(animatronic):
 	var string_var :String = animatronic
 	if Global.AI[string_var] > 0:
 		animatronic = load(str("res://objects/chars/",animatronic,"/",animatronic,".tscn")).instance()
 		add_child(animatronic)
 		animatronic.add_to_group("animatronics")
-
-""" !! IF YOU WANT TO PRELOAD CHARACTERS SO NO ASSETS ARE LOADED IN DURING GAMEPLAY !!
-	This code runs the risk of making things blockier/more bloated but for the time being that's all I got.
-	Study a little yourself maybe!
-	if Global.freddyLevel > 0:
-		print("Fazbear loaded")
-		freddy = preload("res://objects/chars/freddy/freddy.tscn").instance()
-		add_child(freddy)
-		freddy.add_to_group("animatronics")
-		freddy.position = $cameras/lhall.position """
 
 func unloadChar():
 	for threats in get_tree().get_nodes_in_group("animatronics"):
@@ -128,8 +110,6 @@ func delEverything():
 	Audio.stopMusicBox()
 	Audio.stopToyStare()
 	unloadChar()
-	$office/desk.queue_free()
-	$doors.queue_free()
 
 func changeCam(camLoc):
 	camPov.position = get_node("cameras/"+str(camLoc)).position
@@ -144,8 +124,9 @@ func camToggle():
 	ventPov.current = false
 
 func _on_powerConsumption_timeout():
-	Global.power -= 0.5 + Global.usage
+	Global.power -= Global.usage
 	if Global.power <= 0:
+		$gameTimer.stop()
 		Audio.stopBGM()
 		Audio.stopToyStare()
 		Audio.stopMusicBox()
